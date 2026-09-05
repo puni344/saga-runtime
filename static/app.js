@@ -32,8 +32,15 @@ function render(r) {
       'CREATED': 'Ready to submit.',
       'COMPENSATING': 'Processing compensation...'
     };
-    $('#saga-outcome').textContent = `${r.state}: ${headlines[r.state] || r.state} \u2022 ${v.invariantPass ? 'ALL INVARIANTS PASS' : 'INVARIANT FAILURE'}`;
-    $('#saga-outcome').className = 'verify ' + (v.invariantPass ? 'ok' : 'fail');
+    const verdict = v.status || (v.invariantPass ? 'PASS' : 'FAIL');
+    const verdictText = {
+      'PASS': 'ALL INVARIANTS PASS',
+      'AWAITING_REVIEW': 'AWAITING REVIEW \u2014 safe: money parked, awaiting verification',
+      'FAIL': 'INVARIANT FAILURE'
+    };
+    const verdictCls = { 'PASS': 'ok', 'AWAITING_REVIEW': 'wait', 'FAIL': 'fail' }[verdict] || 'fail';
+    $('#saga-outcome').textContent = `${r.state}: ${headlines[r.state] || r.state} \u2022 ${verdictText[verdict] || verdict}`;
+    $('#saga-outcome').className = 'verify ' + verdictCls;
   }
   $('#timeline').innerHTML = r.timeline.slice(-15).map(x =>
     `<div class="event"><div class="ev">${x.event}</div><div class="detail">${JSON.stringify(x.detail).slice(0, 80)}</div></div>`

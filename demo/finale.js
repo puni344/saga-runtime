@@ -213,7 +213,7 @@ async function webhook(port, payload) {
     ['SIGKILL recovery from the persisted database', 'SCENE 6', 'resumed to SUCCEEDED with one debit'],
     ['exactly-once debit under replay/race', 'SCENE 7', 'replay recorded, no second debit'],
     ['idempotent refund under double compensate', 'SCENE 7', 'exactly one refund entry'],
-    ['7-check invariant verifier passes', 'SCENE 7', 'invariantPass true']
+    ['invariant verifier passes (7 checks true on settled saga)', 'SCENE 7', 'invariantPass true']
   ];
   for (const [label, scene, ev] of rows) {
     console.log('  [' + C.green + 'PASS' + C.reset + '] ' + C.bold + label + C.reset + C.dim + '  (' + scene + ': ' + ev + ')' + C.reset);

@@ -883,6 +883,10 @@ test('verifier: all checks pass on clean completed saga', () => {
   engine.run();
   const v = engine.verify();
   for (const [k, val] of Object.entries(v.checks)) {
+    if (k === 'validPausedState') {
+      assert.equal(val, false, 'a settled saga is not awaiting review');
+      continue;
+    }
     assert.equal(val, true, `Check ${k} failed`);
   }
 });
