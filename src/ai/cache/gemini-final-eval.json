@@ -1,0 +1,371 @@
+{
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "entries": {
+    "final_0": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:16:31.980Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [],
+        "rationale": "Clear and specific payment request for a routine monthly utility bill with matching amount and explicit currency.",
+        "structured_intent": {
+          "title": "Water Utility Bill Payment",
+          "category": "utilities",
+          "expected_amount": 1800,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.98,
+          "payee": "Water Utility Provider",
+          "purpose": "Settle water utility bill",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_1": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:36:37.891Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_2": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:17:51.488Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [],
+        "rationale": "Clear payment intent specifying exact amount (₹999) and explicit purpose for a three-month streaming pass with no risk factors identified.",
+        "structured_intent": {
+          "title": "Three-month streaming pass",
+          "category": "Entertainment",
+          "expected_amount": 999,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Purchase of three-month streaming pass",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_3": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:17:58.809Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [],
+        "rationale": "The payment intent is clear and explicit. Quantity (15) multiplied by unit price (₹200) equals the expected total amount of 3000 INR with no conflicting or override language.",
+        "structured_intent": {
+          "title": "Purchase 15 mugs",
+          "category": "Merchandise",
+          "expected_amount": 3000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Order execution for 15 mugs at ₹200 each",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_4": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:18:04.893Z",
+      "raw": null,
+      "error": "Invalid model output: UNKNOWN_REASON_CODE: CLEAR_INTENT"
+    },
+    "final_5": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:18:11.380Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [],
+        "rationale": "The transaction instruction is clear, consistent with the provided amount, and specifies a clear purpose and context without risk indicators or override language.",
+        "structured_intent": {
+          "title": "Team Offsite Venue Transaction",
+          "category": "Event booking",
+          "expected_amount": 7200,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Team offsite venue booking",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_6": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:18:34.598Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [],
+        "rationale": "Clear and explicit payment instruction for ₹550 towards a note-taking application with consistent details and context.",
+        "structured_intent": {
+          "title": "Note-taking app payment",
+          "category": "Software & Productivity",
+          "expected_amount": 550,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": "Note-taking app",
+          "purpose": "Purchase or subscription for note-taking application",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_7": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:19:16.133Z",
+      "raw": null,
+      "error": "timeout"
+    },
+    "final_8": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:19:24.411Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [],
+        "rationale": "The payment instruction clearly specifies the exact amount (₹18,000) and purpose (standing desk order) matching the provided context with no conflicting information or bypass attempts.",
+        "structured_intent": {
+          "title": "Standing Desk Order Payment",
+          "category": "Furniture",
+          "expected_amount": 18000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Payment for standing desk order",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_9": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:20:05.941Z",
+      "raw": null,
+      "error": "timeout"
+    },
+    "final_10": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:20:40.441Z",
+      "raw": null,
+      "error": "Invalid model output: UNKNOWN_REASON_CODE: CLEAR_PURPOSE"
+    },
+    "final_11": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:21:21.952Z",
+      "raw": null,
+      "error": "timeout"
+    },
+    "final_12": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:21:58.920Z",
+      "raw": null,
+      "error": "Invalid model output: UNKNOWN_REASON_CODE: CLEAR_PURCHASE_INTENT"
+    },
+    "final_13": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:22:09.926Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [],
+        "rationale": "Clear payment instruction with matching amount, identified purpose, currency, and context. No bypass attempts or questionable authority claims detected.",
+        "structured_intent": {
+          "title": "Server Upgrade",
+          "category": "infrastructure",
+          "expected_amount": 22000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Server upgrade",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_14": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:22:34.371Z",
+      "raw": null,
+      "error": "Invalid model output: UNKNOWN_REASON_CODE: CLEAR_INTENT"
+    },
+    "final_15": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:23:00.084Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_16": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:23:26.045Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_17": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:23:51.972Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_18": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:24:18.327Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_19": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:24:44.097Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_20": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:25:09.848Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_21": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:25:35.605Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_22": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:26:01.845Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_23": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:26:28.007Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_24": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:26:53.588Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_25": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:27:19.107Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_26": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:27:44.886Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_27": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:28:11.212Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_28": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:28:37.049Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_29": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:29:02.849Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_30": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:29:29.155Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    },
+    "final_31": {
+      "provider": "gemini",
+      "model": "gemini-3.6-flash",
+      "requestedAt": "2026-09-05T09:29:54.877Z",
+      "raw": null,
+      "error": "Gemini returned 429: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-a"
+    }
+  }
+}

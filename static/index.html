@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Saga Runtime v3 — Payment Failure Recovery</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><div><div class="eyebrow">RAZORPAY // PAYMENT RECOVERY ARCHITECTURE</div><h1>Saga Runtime</h1><p class="sub">Architecture shows where an AI planner could sit; this demo runs a risk classifier (rule-based by default) and deterministic financial controls.</p></div><div class="status"><span class="dot"></span> SIMULATED RAIL</div></header>
+<main>
+<section class="hero-grid">
+<div class="panel big">
+  <div class="label">FAILURE SCENARIOS</div>
+  <div class="flow"><span>INTENT</span><b>&rarr;</b><span class="accent">RISK CLASSIFIER</span><b>&rarr;</b><span>POLICY</span><b>&rarr;</b><span>PAYMENT</span><b>&rarr;</b><span class="danger">UNCERTAINTY</span><b>&rarr;</b><span>RECONCILE</span><b>&rarr;</b><span class="safe">SAFE</span></div>
+  <div class="controls">
+    <input id="instruction" type="text" placeholder="Payment instruction..." style="flex:1;min-width:300px" value="Buy the premium subscription for ₹4,999">
+    <input id="amount" type="number" min="1" value="4999" style="width:100px">
+    <button id="analyze" class="accent">Analyze & Pay</button>
+    <button id="advisoryDemo" class="secondary">Run Advisory HIGH_RISK Demo</button>
+    <button id="attempt" class="secondary">Continue Saga</button>
+    <button id="retry" class="secondary">Try Retry</button>
+    <button id="compensate" class="danger-btn">Compensate</button>
+  </div>
+</div>
+<div class="panel metric">
+  <div class="label">RISK CLASSIFICATION (NOT A PLANNER)</div>
+  <div class="muted small">1. CLASSIFIER VERDICT — ADVISORY</div>
+  <div id="ai-risk" class="state">&mdash;</div>
+  <div id="ai-headline" class="headline">Enter a payment instruction</div>
+  <div class="muted small" style="margin-top:14px">2. DETERMINISTIC POLICY — AUTHORITATIVE</div>
+  <div id="policy-decision" class="verify">No policy decision yet</div>
+  <div class="muted small" style="margin-top:14px">3. SAGA OUTCOME</div>
+  <div id="saga-outcome" class="verify">No saga started</div>
+</div>
+</section>
+<section class="grid">
+<div class="panel"><div class="label">SAGA TIMELINE</div><div id="timeline" class="timeline"></div></div>
+<div class="panel"><div class="label">LEDGER &amp; EXTERNAL TRUTH</div><div id="ledger" class="ledger"></div></div>
+</section>
+<section class="grid">
+<div class="panel">
+  <div class="label">RECOVERY BENCHMARK</div>
+  <button id="bench" class="secondary" style="margin-bottom:12px">Run 100-Case Benchmark</button>
+  <div class="benchmarks">
+    <div><span>Invariant pass rate</span><strong id="recovery">&mdash;</strong></div>
+    <div><span>Unsafe retries blocked (recall)</span><strong id="prevention">&mdash;</strong></div>
+    <div><span>Invariant violations</span><strong id="violations">&mdash;</strong></div>
+  </div>
+  <p class="muted small">Deterministic synthetic fault injection. Each case runs through the full saga lifecycle and verifies all invariants. Unsafe-retry recall is measured by chasing unlabeled retry attempts during EXTERNAL_UNKNOWN through the real retry guard.</p>
+</div>
+<div class="panel">
+  <div class="label">AI EVALUATION</div>
+  <button id="runEval" class="secondary" style="margin-bottom:12px">Run Final Test Evaluation</button>
+  <div class="benchmarks">
+    <div><span>Accuracy</span><strong id="eval-acc">&mdash;</strong></div>
+    <div><span>Macro F1</span><strong id="eval-f1">&mdash;</strong></div>
+    <div><span>HIGH_RISK precision</span><strong id="eval-hr-prec">&mdash;</strong></div>
+    <div><span>HIGH_RISK recall</span><strong id="eval-hr-rec">&mdash;</strong></div>
+  </div>
+  <p class="muted small">45-example frozen final test set. Classifier was not modified after this set was created. Hard negatives included.</p>
+</div>
+</section>
+</main>
+<footer><span>Simulated payment rail. No real money moves. AI is advisory only. Data persists across process restarts.</span><span>Saga Runtime v3.0</span></footer>
+<script src="app.js"></script></body></html>

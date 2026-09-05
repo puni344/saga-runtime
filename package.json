@@ -1,0 +1,16 @@
+{
+  "name": "saga-runtime",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Payment-specific Saga Runtime with AI risk analysis for agentic payment failure recovery",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/*.test.js",
+    "eval": "node -e \"const{MockRiskAnalyzer}=require('./src/ai/risk-analyzer');const{evaluate,printReport,printProvenance,printAllReports}=require('./src/ai/evaluate');const{getDevSet,getHeldOutSet,getFinalTestSet}=require('./src/ai/eval-dataset');(async()=>{printAllReports();const a=new MockRiskAnalyzer();console.log('--- Development Set (60 examples) ---');printReport(await evaluate(a,getDevSet()));console.log();console.log('--- Contaminated Holdout (40 examples) ---');console.log('WARNING: Not an unbiased estimate. See provenance.');printReport(await evaluate(a,getHeldOutSet()));console.log();console.log('--- Final Test Set (45 examples, FROZEN) ---');printReport(await evaluate(a,getFinalTestSet()));})();\"",
+    "demo:crash": "node demo/crash-recovery-run.js",
+    "demo:crash:submit": "node -e \"process.env.STAGE='submit'; require('./demo/crash-recovery.js')\"",
+    "demo:crash:recover": "node -e \"process.env.STAGE='recover'; require('./demo/crash-recovery.js')\"",
+    "demo:excellence": "node demo/excellence-demo.js",
+    "demo:finale": "node demo/finale.js"
+  }
+}

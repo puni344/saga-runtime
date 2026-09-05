@@ -1,0 +1,1660 @@
+{
+  "provider": "groq",
+  "model": "qwen/qwen3.8-27b",
+  "entries": {
+    "final_0": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:25:59.168Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states the purpose (water utility bill), the exact amount (₹1,800), and the currency (₹). The context confirms this is a standard monthly utility payment. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Water Utility Bill",
+          "category": "Utilities",
+          "expected_amount": 1800,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Settle water utility bill",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states the purpose (water utility bill), the exact amount (₹1,800), and the currency (₹). The context confirms this is a standard monthly utility payment. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Water Utility Bill",
+          "category": "Utilities",
+          "expected_amount": 1800,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Settle water utility bill",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_1": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:26:02.228Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹3,600) and a standard business purpose (annual antivirus renewal) with no conflicting constraints or suspicious language.",
+        "structured_intent": {
+          "title": "Annual Antivirus Renewal",
+          "category": "Software Subscription",
+          "expected_amount": 3600,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Annual antivirus renewal",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹3,600) and a standard business purpose (annual antivirus renewal) with no conflicting constraints or suspicious language.",
+        "structured_intent": {
+          "title": "Annual Antivirus Renewal",
+          "category": "Software Subscription",
+          "expected_amount": 3600,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Annual antivirus renewal",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_2": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:26:05.299Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states the amount (₹999) and the purpose (three-month streaming pass), which aligns with the provided context. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Three-month streaming pass",
+          "category": "Entertainment subscription",
+          "expected_amount": 999,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Purchase of a three-month streaming pass",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states the amount (₹999) and the purpose (three-month streaming pass), which aligns with the provided context. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Three-month streaming pass",
+          "category": "Entertainment subscription",
+          "expected_amount": 999,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Purchase of a three-month streaming pass",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_3": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:26:08.366Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction provides a clear calculation (15 items at 200 each equals 3000) that matches the provided amount. The intent is an explicit purchase of merchandise with no conflicting constraints or vague references.",
+        "structured_intent": {
+          "title": "Order of 15 mugs",
+          "category": "Merchandise",
+          "expected_amount": 3000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Purchase of 15 mugs",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction provides a clear calculation (15 items at 200 each equals 3000) that matches the provided amount. The intent is an explicit purchase of merchandise with no conflicting constraints or vague references.",
+        "structured_intent": {
+          "title": "Order of 15 mugs",
+          "category": "Merchandise",
+          "expected_amount": 3000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Purchase of 15 mugs",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_4": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:26:13.079Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹2,450) that matches the provided amount field, identifies a specific purpose (monthly workspace rental), and fits the co-working space context. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Monthly Workspace Rental",
+          "category": "Rent/Lease",
+          "expected_amount": 2450,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Monthly workspace rental",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹2,450) that matches the provided amount field, identifies a specific purpose (monthly workspace rental), and fits the co-working space context. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Monthly Workspace Rental",
+          "category": "Rent/Lease",
+          "expected_amount": 2450,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Monthly workspace rental",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_5": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:26:40.112Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹7,200) and a specific purpose (team offsite venue) within an event booking context. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Team Offsite Venue Booking",
+          "category": "Event Booking",
+          "expected_amount": 7200,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Team offsite venue",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹7,200) and a specific purpose (team offsite venue) within an event booking context. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Team Offsite Venue Booking",
+          "category": "Event Booking",
+          "expected_amount": 7200,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Team offsite venue",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_6": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:26:44.923Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (550) and a specific product (note-taking app) within a productivity context. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Note-taking app subscription",
+          "category": "Software/Subscription",
+          "expected_amount": 550,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Purchase of note-taking application",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (550) and a specific product (note-taking app) within a productivity context. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Note-taking app subscription",
+          "category": "Software/Subscription",
+          "expected_amount": 550,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Purchase of note-taking application",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_7": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:26:59.160Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states the amount (₹4,100) and the specific purpose (quarterly compliance audit) within a professional services context. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Quarterly Compliance Audit",
+          "category": "Professional Services",
+          "expected_amount": 4100,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Quarterly compliance audit",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states the amount (₹4,100) and the specific purpose (quarterly compliance audit) within a professional services context. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Quarterly Compliance Audit",
+          "category": "Professional Services",
+          "expected_amount": 4100,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Quarterly compliance audit",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_8": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:27:14.621Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹18,000) that matches the provided amount field, identifies a specific purpose (standing desk order), and fits within the furniture purchase context. There are no signs of ambiguity, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Standing Desk Order Payment",
+          "category": "Furniture",
+          "expected_amount": 18000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Standing desk order",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹18,000) that matches the provided amount field, identifies a specific purpose (standing desk order), and fits within the furniture purchase context. There are no signs of ambiguity, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Standing Desk Order Payment",
+          "category": "Furniture",
+          "expected_amount": 18000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Standing desk order",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_9": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:27:28.957Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (850) and a specific purpose (cloud monitoring service) within an infrastructure context. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Cloud Monitoring Service Payment",
+          "category": "Infrastructure",
+          "expected_amount": 850,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Cloud monitoring service",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (850) and a specific purpose (cloud monitoring service) within an infrastructure context. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Cloud Monitoring Service Payment",
+          "category": "Infrastructure",
+          "expected_amount": 850,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Cloud monitoring service",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_10": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:27:43.186Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (5500) that matches the provided amount field, identifies a specific purpose (workshop facilitator fee), and falls within a standard business context (training cost). There are no signs of ambiguity, adversarial intent, or safeguard bypassing.",
+        "structured_intent": {
+          "title": "Workshop Facilitator Fee",
+          "category": "Training",
+          "expected_amount": 5500,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Workshop facilitator fee",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (5500) that matches the provided amount field, identifies a specific purpose (workshop facilitator fee), and falls within a standard business context (training cost). There are no signs of ambiguity, adversarial intent, or safeguard bypassing.",
+        "structured_intent": {
+          "title": "Workshop Facilitator Fee",
+          "category": "Training",
+          "expected_amount": 5500,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Workshop facilitator fee",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_11": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:27:57.628Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states a purchase intent for a specific item (backup drive) with a clear amount (₹3,900) that matches the provided amount field. The context confirms a standard hardware purchase with no conflicting constraints or suspicious patterns.",
+        "structured_intent": {
+          "title": "Backup Drive Purchase",
+          "category": "Hardware",
+          "expected_amount": 3900,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Purchase of backup drive",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states a purchase intent for a specific item (backup drive) with a clear amount (₹3,900) that matches the provided amount field. The context confirms a standard hardware purchase with no conflicting constraints or suspicious patterns.",
+        "structured_intent": {
+          "title": "Backup Drive Purchase",
+          "category": "Hardware",
+          "expected_amount": 3900,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Purchase of backup drive",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_12": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:28:24.867Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states the amount (₹1,650) and the purpose (team lunch catering). The context supports the business nature of the expense. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Team Lunch Catering",
+          "category": "Meals & Entertainment",
+          "expected_amount": 1650,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Team lunch catering",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states the amount (₹1,650) and the purpose (team lunch catering). The context supports the business nature of the expense. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Team Lunch Catering",
+          "category": "Meals & Entertainment",
+          "expected_amount": 1650,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Team lunch catering",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_13": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:28:27.837Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹22,000) that matches the provided amount field, identifies a specific purpose (server upgrade), and fits the infrastructure context. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Server Upgrade",
+          "category": "Infrastructure",
+          "expected_amount": 22000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Server upgrade",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹22,000) that matches the provided amount field, identifies a specific purpose (server upgrade), and fits the infrastructure context. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Server Upgrade",
+          "category": "Infrastructure",
+          "expected_amount": 22000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Server upgrade",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_14": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:28:42.996Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹4,300) and a specific purpose (annual professional membership) consistent with the provided context. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Annual Professional Membership",
+          "category": "Professional Dues",
+          "expected_amount": 4300,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Annual professional membership fee",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹4,300) and a specific purpose (annual professional membership) consistent with the provided context. There are no vague references, authority claims, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Annual Professional Membership",
+          "category": "Professional Dues",
+          "expected_amount": 4300,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Annual professional membership fee",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_15": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:29:09.929Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (280) and a specific purpose (charity donation drive) within a known company context. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Charity Donation Drive",
+          "category": "Donation",
+          "expected_amount": 280,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Charity donation drive",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (280) and a specific purpose (charity donation drive) within a known company context. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Charity Donation Drive",
+          "category": "Donation",
+          "expected_amount": 280,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Charity donation drive",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_16": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:29:12.894Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹6,700) and a specific purpose (marketing campaign ad spend) within a relevant context. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Marketing Campaign Ad Spend",
+          "category": "Marketing",
+          "expected_amount": 6700,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Marketing campaign ad spend",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹6,700) and a specific purpose (marketing campaign ad spend) within a relevant context. There are no vague references, conflicting constraints, or attempts to bypass safeguards.",
+        "structured_intent": {
+          "title": "Marketing Campaign Ad Spend",
+          "category": "Marketing",
+          "expected_amount": 6700,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Marketing campaign ad spend",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_17": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:29:27.335Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states the amount (₹1,100) and the purpose (print subscription renewal). The context aligns with the instruction, and there are no signs of ambiguity, adversarial intent, or safeguard bypassing.",
+        "structured_intent": {
+          "title": "Print Subscription Renewal",
+          "category": "Media Subscription",
+          "expected_amount": 1100,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Renewal of print subscription",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction explicitly states the amount (₹1,100) and the purpose (print subscription renewal). The context aligns with the instruction, and there are no signs of ambiguity, adversarial intent, or safeguard bypassing.",
+        "structured_intent": {
+          "title": "Print Subscription Renewal",
+          "category": "Media Subscription",
+          "expected_amount": 1100,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Renewal of print subscription",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_18": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:29:41.486Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹3,400) and a legitimate business purpose (employee wellness program) within an HR context. There are no signs of bypassing safeguards or ambiguous authority.",
+        "structured_intent": {
+          "title": "Employee Wellness Program Disbursement",
+          "category": "HR/Employee Benefits",
+          "expected_amount": 3400,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Employee wellness program",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹3,400) and a legitimate business purpose (employee wellness program) within an HR context. There are no signs of bypassing safeguards or ambiguous authority.",
+        "structured_intent": {
+          "title": "Employee Wellness Program Disbursement",
+          "category": "HR/Employee Benefits",
+          "expected_amount": 3400,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Employee wellness program",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_19": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:30:08.707Z",
+      "raw": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹9,100) and a specific purpose (contractor invoice settlement) with no conflicting constraints or vague references.",
+        "structured_intent": {
+          "title": "Contractor Invoice Settlement",
+          "category": "Business Expense",
+          "expected_amount": 9100,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Settle contractor invoice",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      },
+      "parsed": {
+        "risk_level": "LOW_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": false,
+        "reason_codes": [
+          "CLEAR_AMOUNT",
+          "EXPLICIT_PURCHASE",
+          "STANDARD_TRANSACTION"
+        ],
+        "rationale": "The instruction specifies a clear amount (₹9,100) and a specific purpose (contractor invoice settlement) with no conflicting constraints or vague references.",
+        "structured_intent": {
+          "title": "Contractor Invoice Settlement",
+          "category": "Business Expense",
+          "expected_amount": 9100,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Settle contractor invoice",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": null
+        }
+      }
+    },
+    "final_20": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:33:39.870Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_21": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:33:43.034Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_22": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:33:46.103Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_23": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:33:49.193Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_24": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:31:23.303Z",
+      "raw": {
+        "risk_level": "AMBIGUOUS",
+        "intent_clear": false,
+        "amount_consistent": false,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "VAGUE_AMOUNT",
+          "UNCLEAR_TARGET"
+        ],
+        "rationale": "The instruction uses approximate language ('around') for the amount and lacks a specific payee or invoice identifier, making the target and exact value unclear.",
+        "structured_intent": {
+          "title": "Invoice Payment",
+          "category": "Invoice",
+          "expected_amount": 5000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.4,
+          "payee": null,
+          "purpose": "Pay invoice",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": [
+            "Amount is approximate",
+            "Payee is not specified",
+            "Invoice details are missing"
+          ]
+        }
+      },
+      "parsed": {
+        "risk_level": "AMBIGUOUS",
+        "intent_clear": false,
+        "amount_consistent": false,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "VAGUE_AMOUNT",
+          "UNCLEAR_TARGET"
+        ],
+        "rationale": "The instruction uses approximate language ('around') for the amount and lacks a specific payee or invoice identifier, making the target and exact value unclear.",
+        "structured_intent": {
+          "title": "Invoice Payment",
+          "category": "Invoice",
+          "expected_amount": 5000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.4,
+          "payee": null,
+          "purpose": "Pay invoice",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": [
+            "Amount is approximate",
+            "Payee is not specified",
+            "Invoice details are missing"
+          ]
+        }
+      }
+    },
+    "final_25": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:33:57.266Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_26": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:34:11.602Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_27": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:34:38.431Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_28": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:34:43.063Z",
+      "raw": {
+        "risk_level": "AMBIGUOUS",
+        "intent_clear": false,
+        "amount_consistent": true,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "VAGUE_AMOUNT",
+          "UNCLEAR_TARGET"
+        ],
+        "rationale": "The instruction uses the word 'around' and 'budget', indicating an estimate rather than a specific transaction amount. Additionally, the payee is not specified, making the target unclear.",
+        "structured_intent": {
+          "title": "Office Snacks Budget",
+          "category": "Office Supplies",
+          "expected_amount": 3000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.6,
+          "payee": null,
+          "purpose": "Office snacks for the quarter",
+          "urgency": "low",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": [
+            "Amount is an estimate ('around')",
+            "Payee is not specified"
+          ]
+        }
+      },
+      "parsed": {
+        "risk_level": "AMBIGUOUS",
+        "intent_clear": false,
+        "amount_consistent": true,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "VAGUE_AMOUNT",
+          "UNCLEAR_TARGET"
+        ],
+        "rationale": "The instruction uses the word 'around' and 'budget', indicating an estimate rather than a specific transaction amount. Additionally, the payee is not specified, making the target unclear.",
+        "structured_intent": {
+          "title": "Office Snacks Budget",
+          "category": "Office Supplies",
+          "expected_amount": 3000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.6,
+          "payee": null,
+          "purpose": "Office snacks for the quarter",
+          "urgency": "low",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": [
+            "Amount is an estimate ('around')",
+            "Payee is not specified"
+          ]
+        }
+      }
+    },
+    "final_29": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:35:09.958Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_30": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:35:14.776Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_31": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:35:41.707Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_32": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:35:46.427Z",
+      "raw": {
+        "risk_level": "HIGH_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "UNUSUAL_AMOUNT",
+          "UNUSUAL_CONTEXT"
+        ],
+        "rationale": "The instruction specifies a clear amount and intent, but the combination of a very large sum and an offshore destination triggers high-risk safeguards due to unusual context and amount.",
+        "structured_intent": {
+          "title": "Offshore Transfer",
+          "category": "Transfer",
+          "expected_amount": 2000000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.9,
+          "payee": "offshore account",
+          "purpose": "transfer",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": [
+            "Specific offshore account details not provided"
+          ]
+        }
+      },
+      "parsed": {
+        "risk_level": "HIGH_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "UNUSUAL_AMOUNT",
+          "UNUSUAL_CONTEXT"
+        ],
+        "rationale": "The instruction specifies a clear amount and intent, but the combination of a very large sum and an offshore destination triggers high-risk safeguards due to unusual context and amount.",
+        "structured_intent": {
+          "title": "Offshore Transfer",
+          "category": "Transfer",
+          "expected_amount": 2000000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.9,
+          "payee": "offshore account",
+          "purpose": "transfer",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": [
+            "Specific offshore account details not provided"
+          ]
+        }
+      }
+    },
+    "final_33": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:36:00.763Z",
+      "raw": {
+        "risk_level": "HIGH_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "AMBIGUOUS_AUTHORITY",
+          "SAFEGUARD_OVERRIDE",
+          "UNUSUAL_AMOUNT"
+        ],
+        "rationale": "The instruction explicitly claims CFO authority to self-approve a large expense, which is a classic safeguard bypass pattern. Self-approval of one's own expenses is a high-risk control violation.",
+        "structured_intent": {
+          "title": "CFO Expense Report",
+          "category": "Expense Reimbursement",
+          "expected_amount": 500000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.9,
+          "payee": "Self",
+          "purpose": "Expense reimbursement",
+          "urgency": "normal",
+          "authority_claim": "CFO",
+          "override_language": true,
+          "ambiguity": [
+            "Self-approval conflict of interest"
+          ]
+        }
+      },
+      "parsed": {
+        "risk_level": "HIGH_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "AMBIGUOUS_AUTHORITY",
+          "SAFEGUARD_OVERRIDE",
+          "UNUSUAL_AMOUNT"
+        ],
+        "rationale": "The instruction explicitly claims CFO authority to self-approve a large expense, which is a classic safeguard bypass pattern. Self-approval of one's own expenses is a high-risk control violation.",
+        "structured_intent": {
+          "title": "CFO Expense Report",
+          "category": "Expense Reimbursement",
+          "expected_amount": 500000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.9,
+          "payee": "Self",
+          "purpose": "Expense reimbursement",
+          "urgency": "normal",
+          "authority_claim": "CFO",
+          "override_language": true,
+          "ambiguity": [
+            "Self-approval conflict of interest"
+          ]
+        }
+      }
+    },
+    "final_34": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:36:27.489Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_TITLE"
+    },
+    "final_35": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:36:32.305Z",
+      "raw": {
+        "risk_level": "HIGH_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "UNUSUAL_AMOUNT",
+          "UNUSUAL_CONTEXT",
+          "SUSPICIOUS_PATTERN"
+        ],
+        "rationale": "The instruction requests a recurring payment of an unusually high amount (₹999,999) to a 'new account', which is a common pattern for fraudulent or unauthorized recurring charges. The context explicitly flags this as suspicious.",
+        "structured_intent": {
+          "title": "Recurring Payment Setup",
+          "category": "Recurring Transfer",
+          "expected_amount": 999999,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.9,
+          "payee": "new account",
+          "purpose": "Recurring payment",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": [
+            "payee_identity"
+          ]
+        }
+      },
+      "parsed": {
+        "risk_level": "HIGH_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "UNUSUAL_AMOUNT",
+          "UNUSUAL_CONTEXT",
+          "SUSPICIOUS_PATTERN"
+        ],
+        "rationale": "The instruction requests a recurring payment of an unusually high amount (₹999,999) to a 'new account', which is a common pattern for fraudulent or unauthorized recurring charges. The context explicitly flags this as suspicious.",
+        "structured_intent": {
+          "title": "Recurring Payment Setup",
+          "category": "Recurring Transfer",
+          "expected_amount": 999999,
+          "currency": "INR",
+          "recurring": true,
+          "confidence": 0.9,
+          "payee": "new account",
+          "purpose": "Recurring payment",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": [
+            "payee_identity"
+          ]
+        }
+      }
+    },
+    "final_36": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:36:59.027Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_CURRENCY"
+    },
+    "final_37": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:37:03.739Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_TITLE"
+    },
+    "final_38": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:37:30.467Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_TITLE"
+    },
+    "final_39": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:37:33.537Z",
+      "raw": {
+        "risk_level": "HIGH_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "SUSPICIOUS_PATTERN",
+          "ADVERSARIAL_INPUT",
+          "UNUSUAL_AMOUNT"
+        ],
+        "rationale": "The instruction explicitly states an intent to 'exploit' a system, which constitutes an adversarial attempt to abuse the platform's incentive structure rather than a legitimate payment or purchase. This triggers high-risk safeguards.",
+        "structured_intent": {
+          "title": "Referral Bonus Exploitation",
+          "category": "Incentive Abuse",
+          "expected_amount": 800000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Claim credits via system exploitation",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": []
+        }
+      },
+      "parsed": {
+        "risk_level": "HIGH_RISK",
+        "intent_clear": true,
+        "amount_consistent": true,
+        "requires_confirmation": true,
+        "reason_codes": [
+          "SUSPICIOUS_PATTERN",
+          "ADVERSARIAL_INPUT",
+          "UNUSUAL_AMOUNT"
+        ],
+        "rationale": "The instruction explicitly states an intent to 'exploit' a system, which constitutes an adversarial attempt to abuse the platform's incentive structure rather than a legitimate payment or purchase. This triggers high-risk safeguards.",
+        "structured_intent": {
+          "title": "Referral Bonus Exploitation",
+          "category": "Incentive Abuse",
+          "expected_amount": 800000,
+          "currency": "INR",
+          "recurring": false,
+          "confidence": 0.95,
+          "payee": null,
+          "purpose": "Claim credits via system exploitation",
+          "urgency": "normal",
+          "authority_claim": null,
+          "override_language": false,
+          "ambiguity": []
+        }
+      }
+    },
+    "final_40": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:38:00.164Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_41": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:38:03.130Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_42": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:38:17.468Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_43": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:38:44.194Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    },
+    "final_44": {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "requestedAt": "2026-09-05T10:38:49.007Z",
+      "raw": null,
+      "parsed": null,
+      "error": "Invalid model output: INVALID_EXPECTED_AMOUNT"
+    }
+  }
+}
