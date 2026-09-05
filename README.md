@@ -461,4 +461,4 @@ This is not novel. It is a focused implementation of established patterns applie
 
 ## License
 
-Private. Built for Razorpay AI Builder Hackathon 2026.
+No license specified. Submitted as a project for the Razorpay AI Builder Internship 2026.
