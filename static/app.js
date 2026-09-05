@@ -88,6 +88,7 @@ $('#advisoryDemo').onclick = () => {
 
 $('#attempt').onclick = async () => {
   if (!currentSagaId) { alert('Analyze and begin a payment first'); return; }
+  await fetch('/api/review', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sagaId: currentSagaId, decision: 'approve' }) });
   const r = await fetch('/api/attempt', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ sagaId: currentSagaId }) }).then(r => r.json());
   render(r);
 };
