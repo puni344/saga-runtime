@@ -385,7 +385,7 @@ Open http://localhost:3000
 npm test
 ```
 
-259 tests covering:
+261 tests covering:
 - Payment runtime: invariants, EXTERNAL_UNKNOWN safety, reconciliation, idempotency, persistence, concurrency, refund, validation, benchmark, verifier, mutation sensitivity
 - AI layer: schema validation, safe JSON parsing, mock analyzer, LLM analyzer structure, policy engine, integration, mutation safety, evaluation dataset integrity, provenance metadata, final test set integrity
 - **True process restart**: spawns the server as a child process, reaches EXTERNAL_UNKNOWN / the RECONCILING checkpoint, kills it with SIGKILL, starts a brand-new process, and verifies the saga resumes to SUCCEEDED with exactly one debit from the persisted JSON alone
