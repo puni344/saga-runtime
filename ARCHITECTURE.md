@@ -41,26 +41,29 @@ Interpreter internals (for the boundary, not the money): `MockRiskAnalyzer` is r
 
 > README: [### Why This Boundary Exists](README.md#why-this-boundary-exists), [## What is implemented](README.md#what-is-implemented)
 
-## 3. Verification: the 8-check invariant verifier
+## 3. Verification: the 9-check invariant verifier
 
-`SagaEngine.verify()` lives in `src/verifier.js` and returns `{ invariantPass, status, checks }` ([verifier.js:18-69](src/verifier.js#L18-L69)).
+`SagaEngine.verify()` lives in `src/verifier.js` and returns `{ invariantPass, status, checks }` ([verifier.js:18-85](src/verifier.js#L18-L85)).
 
 | Check | Definition (code) |
 |---|---|
 | `noDuplicateDebit` | at most 1 DEBIT entry ([verifier.js:41](src/verifier.js#L41)) |
 | `moneyConserved` | computed from DEBIT/REFUND entry totals: `debitTotal - refundTotal === (SUCCEEDED ? amount : 0)`; `UNKNOWN` external status is exempt ([verifier.js:42](src/verifier.js#L42), totals at [verifier.js:20-23](src/verifier.js#L20-L23)) — net zero after a full refund is a pass, not a loss |
-| `validTerminalState` | state in `TERMINAL_STATES` (`SUCCEEDED`/`REFUNDED`/`FAILED`) or safely-unresolved `EXTERNAL_UNKNOWN` ([verifier.js:43](src/verifier.js#L43), [verifier.js:5](src/verifier.js#L5)) |
+| `validTerminalState` | state in `TERMINAL_STATES` (`SUCCEEDED`/`REFUNDED`/`FAILED`) or safely-unresolved `EXTERNAL_UNKNOWN` ([verifier.js:43](src/verifier.js#L43), [verifier.js:5](src/verifier.js#L5)) — string membership only, not a ledger cross-check |
+| `stateLedgerConsistent` | **closes the gap below**: couples a terminal state to the ledger and external truth — `SUCCEEDED` ⇒ exactly 1 DEBIT **and** `external.status === 'SUCCEEDED'`; `REFUNDED` ⇒ 1 DEBIT + 1 matching REFUND (`debitTotal === refundTotal`); `FAILED` ⇒ no un-reversed net money (`debitTotal - refundTotal === 0`); non-terminal states unaffected ([verifier.js:51-62](src/verifier.js#L51-L62)) |
 | `validPausedState` | *lawful review pause*, verified strictly from state: `CREATED` + `review.status === 'PENDING'` + external `NOT_CREATED` + no `paymentId` + no `orderId` + zero DEBIT/REFUND entries + ledger debit/credit both 0 ([verifier.js:30-40](src/verifier.js#L30-L40), [verifier.js:44](src/verifier.js#L44)) |
 | `stateConsistent` | state in `VALID_STATES` (the 9-vertex state graph) ([verifier.js:45](src/verifier.js#L45), [verifier.js:1-4](src/verifier.js#L1-L4)) |
-| `retryWasBlocked` | if a retry was attempted, saga must sit in `EXTERNAL_UNKNOWN` ([verifier.js:46](src/verifier.js#L46)) — reported in `checks`, deliberately **excluded** from `invariantPass` ([verifier.js:49-54](src/verifier.js#L49-L54)) |
-| `refundIdempotent` | at most 1 REFUND entry ([verifier.js:47](src/verifier.js#L47)) |
-| `oneDebitPerPayment` | distinct `paymentId`s across DEBIT entries ([verifier.js:48](src/verifier.js#L48)) |
+| `retryWasBlocked` | if a retry was attempted, saga must sit in `EXTERNAL_UNKNOWN` ([verifier.js:63](src/verifier.js#L63)) — reported in `checks`, deliberately **excluded** from `invariantPass` ([verifier.js:66-73](src/verifier.js#L66-L73)) |
+| `refundIdempotent` | at most 1 REFUND entry ([verifier.js:64](src/verifier.js#L64)) |
+| `oneDebitPerPayment` | distinct `paymentId`s across DEBIT entries ([verifier.js:65](src/verifier.js#L65)) |
 
-`invariantPass = every moneyStateCheck && (validTerminalState || validPausedState)` ([verifier.js:55-57](src/verifier.js#L55-L57)). The `status` verdict is what callers render: `PASS` (settled clean), `AWAITING_REVIEW` (verified lawful pause — explicitly not a blanket pass for `CREATED`), or `FAIL` ([verifier.js:58-67](src/verifier.js#L58-L67)). The allowed-transition graph is authoritative for what "resting where it shouldn't" means ([verifier.js:6-16](src/verifier.js#L6-L16)).
+`invariantPass = every moneyStateCheck && (validTerminalState || validPausedState)` ([verifier.js:72-74](src/verifier.js#L72-L74)). The `status` verdict is what callers render: `PASS` (settled clean), `AWAITING_REVIEW` (verified lawful pause — explicitly not a blanket pass for `CREATED`), or `FAIL` ([verifier.js:79-84](src/verifier.js#L79-L84)). The allowed-transition graph is authoritative for what "resting where it shouldn't" means ([verifier.js:6-16](src/verifier.js#L6-L16)).
+
+White-box note: `validTerminalState` alone would let a forged saga claiming `state='SUCCEEDED'` with a zero ledger and a non-`SUCCEEDED` `external.status` verify PASS (moneyConserved only demands a debit when external is `SUCCEEDED`). The `stateLedgerConsistent` check closes that hole ([verifier.js:46-62](src/verifier.js#L46-L62)), and [tests/verifier.test.js](tests/verifier.test.js) pins both the fixed exploit and the still-valid settled cases.
 
 The adversarial benchmark and scorecard re-assert this boundary: `src/ai/adversarial-benchmark.js` drives the real store+saga+rail (not a policy stub) and asserts observed money outcomes; `tests/safety-scorecard.test.js` re-derives the consolidated row every run.
 
-> README: [## What is implemented](README.md#what-is-implemented) ("8-check Invariant Verifier"), [### Observed safety scorecard](README.md#observed-safety-scorecard-consolidated-provenance-labeled)
+> README: [## What is implemented](README.md#what-is-implemented) ("9-check Invariant Verifier"), [### Observed safety scorecard](README.md#observed-safety-scorecard-consolidated-provenance-labeled)
 
 ## 4. Durability across a real process restart
 
@@ -152,7 +155,7 @@ These are deliberately not papered over here:
 | Analyzers (mock default, LLM clients) | `src/ai/risk-analyzer.js` |
 | Evaluator + dataset + provenance | `src/ai/evaluate.js`, `src/ai/eval-dataset.js` |
 | Live evaluation cache | `src/ai/cache/gemini-final-eval.json`, `src/ai/cache/groq-final-eval.json` |
-| 8-check verifier | `src/verifier.js` |
+| 9-check verifier | `src/verifier.js` |
 | Crash-recovery demo (new-process) | `demo/crash-recovery-run.js`, `demo/crash-recovery.js` |
 | SIGKILL + multi-process CAS tests | `tests/process-restart.test.js` |
 | Dashboard | `static/index.html`, `static/app.js`, `static/styles.css` |

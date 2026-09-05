@@ -43,6 +43,23 @@ function verify(saga, retryAttempted) {
   checks.validTerminalState = isSafeUnresolved || TERMINAL_STATES.has(saga.state);
   checks.validPausedState = isReviewPaused;
   checks.stateConsistent = VALID_STATES.has(saga.state);
+  // validTerminalState only checks that the state string is terminal; it does not
+  // cross-check the ledger or external status. A forged saga claiming SUCCEEDED with a
+  // zero ledger and a non-SUCCEEDED external status would otherwise verify PASS. This
+  // named check closes that gap: a terminal state must be consistent with the entries
+  // that produced it and with the external truth. Non-terminal states are unaffected.
+  checks.stateLedgerConsistent = (() => {
+    if (saga.state === 'SUCCEEDED') {
+      return debitEntries.length === 1 && saga.external.status === 'SUCCEEDED';
+    }
+    if (saga.state === 'REFUNDED') {
+      return debitEntries.length === 1 && refundEntries.length === 1 && debitTotal === refundTotal;
+    }
+    if (saga.state === 'FAILED') {
+      return debitTotal - refundTotal === 0;
+    }
+    return true;
+  })();
   checks.retryWasBlocked = retryAttempted ? (saga.state === 'EXTERNAL_UNKNOWN') : true;
   checks.refundIdempotent = refundEntries.length <= 1;
   checks.oneDebitPerPayment = new Set(debitEntries.map(e => e.paymentId)).size === debitEntries.length;
@@ -52,7 +69,7 @@ function verify(saga, retryAttempted) {
   // reported in `checks` but not folded into `invariantPass`. Both are needed for a safe
   // execution path, and invariantPass = true alone does not prove retry safety (retry safety
   // is tested separately by the retry guard and the unlabeled retry-guard recall sweep).
-  const moneyStateChecks = [checks.noDuplicateDebit, checks.moneyConserved, checks.stateConsistent, checks.refundIdempotent, checks.oneDebitPerPayment];
+  const moneyStateChecks = [checks.noDuplicateDebit, checks.moneyConserved, checks.stateConsistent, checks.stateLedgerConsistent, checks.refundIdempotent, checks.oneDebitPerPayment];
   const restingValid = checks.validTerminalState || checks.validPausedState;
   const invariantPass = moneyStateChecks.every(Boolean) && restingValid;
   // status is what callers render. PASS = settled clean. AWAITING_REVIEW = verified (a),

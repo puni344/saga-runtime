@@ -115,4 +115,68 @@ test('verifier: pause is verified, not assumed - dirty or gated-incorrect states
   assert.equal(falsifiedLedger.checks.validPausedState, false);
 });
 
+// ============================================================
+// Regression: a forged saga claiming SUCCEEDED with a zero ledger and a
+// non-SUCCEEDED external status must NOT verify PASS. validTerminalState only
+// checks the state string; stateLedgerConsistent cross-checks the ledger and
+// external status. Reproduces the white-box exploit found via direct object
+// construction (state='SUCCEEDED', empty ledger, external != SUCCEEDED).
+// ============================================================
+
+test('verifier: stateLedgerConsistent rejects a forged SUCCEEDED saga with zero ledger and non-SUCCEEDED external status', () => {
+  const forged = (externalStatus) => ({
+    state: 'SUCCEEDED',
+    amount: 4999,
+    external: { status: externalStatus },
+    review: null,
+    paymentId: null,
+    orderId: null,
+    ledger: { debit: 0, credit: 0, entries: [] }
+  });
+
+  for (const external of ['FAILED', 'NOT_CREATED', 'UNKNOWN']) {
+    const r = verify(forged(external), false);
+    assert.equal(r.status, 'FAIL', `SUCCEEDED with zero ledger, external=${external} must fail, not pass`);
+    assert.equal(r.invariantPass, false);
+    assert.equal(r.checks.stateLedgerConsistent, false, 'the named cross-check must be the one that fails');
+    assert.equal(r.checks.validTerminalState, true, 'state string alone still looks terminal - the gap is the cross-check');
+  }
+
+  const legit = verify({
+    state: 'SUCCEEDED',
+    amount: 4999,
+    external: { status: 'SUCCEEDED' },
+    review: null,
+    paymentId: 'pay_x',
+    orderId: 'ord_x',
+    ledger: { debit: 4999, credit: 0, entries: [{ id: '1', kind: 'DEBIT', amount: 4999, paymentId: 'pay_x' }] }
+  }, false);
+  assert.equal(legit.status, 'PASS', 'a real SUCCEEDED saga with one debit and SUCCEEDED external must keep passing');
+  assert.equal(legit.checks.stateLedgerConsistent, true);
+});
+
+test('verifier: stateLedgerConsistent requires a matching REFUND for REFUNDED and no net money for FAILED', () => {
+  const stateLedgerConsistent = (state, debitCount, refundCount) => {
+    const entries = [];
+    for (let i = 0; i < debitCount; i++) entries.push({ id: 'd' + i, kind: 'DEBIT', amount: 4999, paymentId: 'pay' + i });
+    for (let i = 0; i < refundCount; i++) entries.push({ id: 'r' + i, kind: 'REFUND', amount: 4999, paymentId: 'pay0' });
+    const r = verify({
+      state,
+      amount: 4999,
+      external: { status: state },
+      review: null,
+      paymentId: 'pay0',
+      orderId: null,
+      ledger: { debit: debitCount * 4999, credit: refundCount * 4999, entries }
+    }, false);
+    return r.checks.stateLedgerConsistent;
+  };
+
+  assert.equal(stateLedgerConsistent('REFUNDED', 1, 1), true, 'REFUNDED needs a DEBIT and a matching REFUND');
+  assert.equal(stateLedgerConsistent('REFUNDED', 1, 0), false, 'REFUNDED with no refund is a forged success');
+  assert.equal(stateLedgerConsistent('FAILED', 0, 0), true, 'FAILED with no money moved is valid');
+  assert.equal(stateLedgerConsistent('FAILED', 1, 1), true, 'FAILED with a fully-reversed debit is valid');
+  assert.equal(stateLedgerConsistent('FAILED', 1, 0), false, 'FAILED with an unreversed debit is not consistent');
+});
+
 function crypto() { return Math.random().toString(36).slice(2, 8); }
