@@ -229,6 +229,8 @@ A real LLM could potentially handle the structural-risk examples (understanding 
 
 #### Live LLM Evaluation
 
+**Finding — schema-boundary-limited, not model-quality-limited.** Two independent live LLM providers (Gemini and Groq) were run against the frozen 45-example test set, using a schema written for a rule-based mock classifier. Neither completed the full set — not because either model performed badly, but because real models express valid answers (reason codes, zero-amounts, optional fields) in forms the mock-era frozen schema does not recognize, and the Gemini run was additionally quota-blocked. Every response that DID pass the schema matched its frozen label, on both providers. The frozen MockRiskAnalyzer result below is the one complete, valid, comparable number in this section; the live numbers measure the prompt↔frozen-schema conformance boundary, not model quality, and no model is ranked against another from a partial run.
+
 **MockRiskAnalyzer — frozen 45-example result** (fully evaluated on all 45 frozen examples; recomputed from the current repository, unchanged):
 
 ```text
@@ -240,6 +242,16 @@ TP = 6   FP = 3   FN = 2
 ```
 
 This is the valid frozen result for the deterministic mock classifier.
+
+**Summary — the shape of the result at a glance:**
+
+| Provider | Completed | Schema-rejected | Other failures | Conditional accuracy (on completed) | Note |
+|---|---|---|---|---|---|
+| Mock | 45/45 | — | — | 82.2% | frozen, valid, comparable |
+| Groq | 26/45 | 19 | 0 | 100% | schema-boundary limited, not model-quality limited |
+| Gemini | 7/45 | 4 | 3 timeout / 18 quota / 13 never-attempted | 100% (on 7) | quota-blocked, not model-quality limited |
+
+##### Groq — live run (detailed)
 
 **Live Groq LLM evaluation — partial (schema-conformance-limited):** 26/45 examples completed successfully; 19/45 were rejected by the frozen `validateAIOutput` (15× `INVALID_EXPECTED_AMOUNT` — the model emitted `expected_amount` ≤ 0 on zero-amount ambiguous/hard-negative examples; 3× `INVALID_TITLE`; 1× `INVALID_CURRENCY` — optional fields emitted as `null`, which the frozen validator rejects). Zero HTTP/transport failures on the completed pass (one mid-run process crash was resumed from cache in a single bounded pass; error entries were re-recorded identically, not repaired). All 26 classified examples matched their frozen labels. Because 57.8% completion leaves 19 examples unclassified, no full-set accuracy/F1 comparison with the MockRiskAnalyzer is claimed.
 
@@ -259,6 +271,8 @@ retries    = bounded (429/5xx/timeout only); one cache-resumed pass after a proc
 
 The Groq run is **not treated as a full-set model benchmark**. What it does demonstrate: the `AI_PROVIDER=groq` path (reusing the OpenAI-compatible adapter with the Groq base URL) works end-to-end with bounded retry/rate-limit discipline; the shared prompt now enumerates the frozen 13-code `REASON_CODES` enum so the enum-drift rejection class that hit Gemini did not recur; and every schema-conforming response matched its frozen label. The residual schema rejections sit at the prompt↔frozen-validator boundary (non-positive `expected_amount` for zero-amount examples, and `null` for optional string fields) and are reported exactly, not papered over. The 26/45 result is incomplete and partially degenerate on coverage even though the conditional signal is perfect.
 
+##### Gemini — live run (detailed)
+
 **Live Gemini LLM evaluation — incomplete (quota-blocked):** 7/45 examples completed successfully; 4/45 returned schema-invalid classifications (valid JSON, but with reason codes not in the frozen 13-code `REASON_CODES` set, e.g. `CLEAR_INTENT`), 3/45 timed out, 18/45 returned HTTP 429 (quota exceeded), and 13/45 were never attempted. The run was aborted at 32/45 examples attempted — final_32..final_44 were never reached — so this is NOT a 45/45 attempted-and-failed result, and the 18 HTTP-429s and 13 never-attempted examples are distinct buckets that must not be folded together. Because only 15.6% of the frozen test set was evaluated, no meaningful full-set accuracy/F1 comparison with the MockRiskAnalyzer is claimed. This was run against the live Gemini API (`gemini-3.6-flash`) using the new `AI_PROVIDER=gemini` adapter path (`src/ai/risk-analyzer.js`), which is opt-in (default remains the deterministic mock). Adapter adds bounded exponential backoff on 429/5xx/timeout and a per-call rate limit; raw responses are cached keyed by example id in `src/ai/cache/gemini-final-eval.json` for audit/reproducibility.
 
 ```text
@@ -277,7 +291,7 @@ never-attempted = 13 (final_32..final_44)
 
 These numbers are **not comparable as model-performance metrics**: 38 of 45 examples were not classified (quota/timeout/schema-rejection). The two honest findings are (a) the new Gemini adapter path is real and works end-to-end, and (b) a live model's free-form reason codes do not conform to the frozen classifier enum, so the strict schema validation rejects them — a genuine conformance gap between a real LLM and the rule-tuned evaluation contract. No model is declared better or worse from this incomplete run.
 
-**Raw evaluator output with ERROR counted as incorrect** (sub-unit, informational only)
+##### Appendix: raw evaluator output (errors counted as wrong, informational only)
 
 The repository's raw evaluator output over all 45 examples, where each of the 19 schema-rejected examples is represented as an `ERROR`/incorrect prediction:
 
