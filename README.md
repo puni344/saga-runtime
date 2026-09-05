@@ -2,6 +2,8 @@
 
 A payment-specific failure recovery runtime with a materially useful AI interpretation layer on top of a deterministic money gate.
 
+> Code-cited architecture walkthrough (data flow, authority boundary, verifier, durability, concurrency, AI evaluation): **[ARCHITECTURE.md](ARCHITECTURE.md)**
+
 The core problem:
 
 > When an external payment rail moves money but the local process does not know, retrying blindly can create duplicate financial effects.
@@ -28,12 +30,16 @@ USER OR AGENT PAYMENT INSTRUCTION
  +-- ALLOW -------------+  REVIEW (gates money):
  |                       v
  |   SAGA RUNTIME        VERIFICATION GATE (PENDING)
- |   (deterministic)           |
- |      |                 /api/review approve/deny
- |      |                 v
- |      |              APPROVED   DENIED -> saga FAILED, no money moves
- |      |                 |
- |      +-----------------+
+ |   (deterministic)                    |
+ |      |        PAYMENT -> PENDING_REVIEW: saga parks in CREATED,
+ |      |        attempt() refused (REVIEW_PENDING_BLOCKS_MONEY),
+ |      |        no rail call, NO payment created (zero DEBIT/REFUND)
+ |      |                               |
+ |      |             /api/review approve/deny
+ |      |                               v
+ |      |                  APPROVED   DENIED -> saga FAILED, no money moves
+ |      |                               |
+ |      +-------------------------------+
  |      v
  +-> LEDGER  IDEM  RAIL  RECONCILE  VERIFY
        |             |
